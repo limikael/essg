@@ -1,0 +1,19 @@
+{
+  "name": "essg",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+    "essg": "src/essg-cli.js"
+  },
+  "dependencies": {
+    "esbuild": "^0.17.8",
+    "preact": "^10.12.1",
+    "preact-render-to-string": "^5.2.6",
+    "yaml": "^2.2.1",
+    "yargs": "^17.6.2"
+  }
+}

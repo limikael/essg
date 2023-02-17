@@ -1,0 +1,3 @@
+pages:
+- template: index.jsx
+  title: xyz
