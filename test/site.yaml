@@ -1,3 +1,4 @@
 pages:
-- template: index.jsx
+- route: index.html
+  template: index.jsx
   title: xyz

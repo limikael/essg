@@ -1,13 +1,15 @@
 {
   "name": "essg",
   "version": "1.0.0",
-  "description": "",
-  "scripts": {},
+  "description": "Bla",
   "author": "",
   "license": "ISC",
   "type": "module",
   "bin": {
     "essg": "src/essg-cli.js"
+  },
+  "scripts": {
+    "test": "./src/essg-cli.js --conf test/site.yaml --outdir testout"
   },
   "dependencies": {
     "esbuild": "^0.17.8",
