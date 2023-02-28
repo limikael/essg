@@ -51,19 +51,25 @@ export async function build(conf) {
 		conf.doctype="html";
 
 	for (let page of conf.pages) {
-		let outFn=path.join(conf.outdir,page.route);
-		let templateFn=path.join(conf.templatedir,page.template);
-		console.log(templateFn+" -> "+outFn);
+		if (conf.route && page.route!=conf.route) {
+			console.log("# Skipping: "+page.route)
+		} 
 
-		let mod=await importJsx(templateFn);
-		let props={...conf,...page};
-		let rendered=render(mod.default(props),{},{pretty: true});
+		else {
+			let outFn=path.join(conf.outdir,page.route);
+			let templateFn=path.join(conf.templatedir,page.template);
+			console.log("- Building: "+templateFn+" -> "+outFn);
 
-		if (conf.doctype)
-			rendered="<!DOCTYPE "+conf.doctype+">\n"+rendered;
+			let mod=await importJsx(templateFn);
+			let props={...conf,...page};
+			let rendered=render(mod.default(props),{},{pretty: true});
 
-		rendered+="\n";
+			if (conf.doctype)
+				rendered="<!DOCTYPE "+conf.doctype+">\n"+rendered;
 
-		fs.writeFileSync(outFn,rendered);
+			rendered+="\n";
+
+			fs.writeFileSync(outFn,rendered);
+		}
 	}
 }

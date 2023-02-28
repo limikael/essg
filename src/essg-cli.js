@@ -15,6 +15,9 @@ let y=yargs(process.argv.slice(2))
 	.option("outdir",{
 		describe: "Output directory.",
 	})
+	.option("route",{
+		describe: "Only build this route.",
+	})
 	.option("templatedir",{
 		describe: "Template directory.",
 	})

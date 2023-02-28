@@ -1,7 +1,7 @@
 {
   "name": "essg",
-  "version": "1.0.0",
-  "description": "Bla",
+  "version": "1.0.1",
+  "description": "Static Page Generator",
   "author": "",
   "license": "ISC",
   "type": "module",
