@@ -23,7 +23,8 @@ async function importJsx(fn) {
 		format: "esm",
 		jsxFactory: "h",
 		jsxFragment: "Fragment",
-		inject: [__dirname+"/preact-shim.js"]
+		inject: [__dirname+"/preact-shim.js"],
+		platform: "node"
 	}
 
 	await esbuild.build(options);
